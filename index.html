@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AZ-900 Drill Room</title>
+<meta name="description" content="Flashcards, matching, scenario drills and a timed mock exam for AZ-900 Azure Fundamentals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1 class="wordmark">AZ-900 <span class="arrow">&rarr;</span> Drill Room</h1>
+    <p class="tagline">Cue &rarr; answer drilling for the three exam domains: flashcards, matching, scenario drills, and a timed mock. Nothing is tracked or saved &mdash; every visit starts clean.</p>
+    <div class="domain-key">
+      <span class="k1">Domain 1 &middot; Cloud concepts 25&ndash;30%</span>
+      <span class="k2">Domain 2 &middot; Architecture &amp; services 35&ndash;40%</span>
+      <span class="k3">Domain 3 &middot; Management &amp; governance 30&ndash;35%</span>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Study modes">
+    <button type="button" class="active" data-view="cards">Cards</button>
+    <button type="button" data-view="match">Match</button>
+    <button type="button" data-view="scen">Scenarios</button>
+    <button type="button" data-view="exam">Exam</button>
+  </nav>
+
+  <!-- ---------- flashcards ---------- -->
+  <section id="view-cards" class="view active" aria-label="Flashcards">
+    <h2>Flashcards</h2>
+    <p class="sub">Traps &amp; distinctions is the &ldquo;they sound the same&rdquo; deck &mdash; the cues the exam hides answers in. Full coverage walks every definition.</p>
+    <div class="controls">
+      <div class="seg" id="fc-deck" role="group" aria-label="Deck">
+        <button type="button" class="on" data-deck="traps">Traps &amp; distinctions</button>
+        <button type="button" data-deck="full">Full coverage</button>
+      </div>
+      <div class="seg" id="fc-dom" role="group" aria-label="Domain filter">
+        <button type="button" class="on" data-dom="0">All</button>
+        <button type="button" data-dom="1">D1</button>
+        <button type="button" data-dom="2">D2</button>
+        <button type="button" data-dom="3">D3</button>
+      </div>
+      <button type="button" class="btn" id="fc-shuffle">Shuffle</button>
+      <span class="count" id="fc-count"></span>
+    </div>
+    <div class="fc-stage" id="fc-stage"></div>
+    <div class="fc-nav">
+      <button type="button" class="btn" id="fc-prev">&larr; Previous</button>
+      <button type="button" class="btn primary" id="fc-flip">Flip</button>
+      <button type="button" class="btn" id="fc-next">Next &rarr;</button>
+    </div>
+  </section>
+
+  <!-- ---------- match ---------- -->
+  <section id="view-match" class="view" aria-label="Matching game">
+    <h2>Match</h2>
+    <p class="sub">Pair each cue with its answer &mdash; eight pairs a round, drawn from a pool of 48. A wrong pair shakes; a right pair locks.</p>
+    <div class="controls">
+      <button type="button" class="btn" id="m-new">New round</button>
+      <span class="count" id="m-status"></span>
+    </div>
+    <div id="m-banner"></div>
+    <div class="match-board">
+      <div class="count">cues</div>
+      <div class="count">answers</div>
+      <div class="match-col" id="m-cues"></div>
+      <div class="match-col" id="m-ans"></div>
+    </div>
+  </section>
+
+  <!-- ---------- scenarios ---------- -->
+  <section id="view-scen" class="view" aria-label="Scenario drills">
+    <h2>Scenario drills</h2>
+    <p class="sub">Pick the service. Instant verdict, then the why. The tally lasts only as long as this page does.</p>
+    <div id="s-box"></div>
+    <div class="session-bar">
+      <button type="button" class="btn primary" id="s-next" disabled>Next scenario</button>
+      <button type="button" class="btn" id="s-restart">Restart</button>
+      <span class="count" id="s-tally"></span>
+    </div>
+  </section>
+
+  <!-- ---------- exam ---------- -->
+  <section id="view-exam" class="view" aria-label="Mock exam">
+    <div id="e-box"></div>
+  </section>
+
+  <footer>
+    Every card, question and scenario derives from the AZ-900 content reference this site was built from
+    (anchored to the Microsoft skills outline updated 14 Jan 2026). Where anything here disagrees with
+    Microsoft Learn, Learn is correct. The pass mark of 700/1000 is a scaled score &mdash; not 70% of questions.
+    Question count, exam length and cost are third-party figures: confirm them when you book.
+    Nothing on this site is saved between visits.
+  </footer>
+
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
